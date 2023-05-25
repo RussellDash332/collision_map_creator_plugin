@@ -1,1 +1,4 @@
 build
+*.world
+*.png
+msgs/*
