@@ -112,8 +112,10 @@ class CollisionMapCreator : public WorldPlugin
 
     for (int i = 0; i < count_vertical; ++i)
     {
-      std::cout << "Percent complete: " << i * 100.0 / count_vertical
-                << std::endl;
+      if (i % 100000 == 0 || i == count_vertical - 1) {
+        std::cout << "Percent complete: " << i * 100.0 / count_vertical
+                  << std::endl;
+      }
       x = i * dX_vertical + msg->lowerleft().x();
       y = i * dY_vertical + msg->lowerleft().y();
       for (int j = 0; j < count_horizontal; ++j)
